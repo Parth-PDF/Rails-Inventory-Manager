@@ -1,0 +1,14 @@
+<h1><%= @item.title %></h1>
+
+<p><%= @item.body %></p>
+<% if @warehouse.present? %>
+  <p>This product is at the following warehouse: <%= @warehouse.name %> which is located at: <%= @warehouse.location %></p>
+<% end %>
+
+<ul>
+  <li><%= link_to "Edit Item", edit_item_path(@item) %></li>
+  <li><%= link_to "Remove Item", item_path(@item), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure you wish to remove item?"
+  } %></li>
+</ul>

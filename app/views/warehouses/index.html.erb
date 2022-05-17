@@ -1,0 +1,12 @@
+<h1>Inventory Manager, Warehouses:</h1>
+
+<ul>
+  <% @warehouses.each do |warehouse| %>
+    <li>
+      <%= link_to warehouse.name, warehouse %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add new warehouse", new_warehouse_path %> <br>
+<%= link_to "View items", items_path %>

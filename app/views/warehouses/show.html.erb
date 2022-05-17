@@ -1,0 +1,11 @@
+<h1><%= @warehouse.name %></h1>
+
+<p><%= @warehouse.location %></p>
+
+<ul>
+  <li><%= link_to "Edit Warehouse", edit_warehouse_path(@warehouse) %></li>
+  <li><%= link_to "Remove Warehouse", warehouse_path(@warehouse), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure you wish to remove this warehouse?"
+  } %></li>
+</ul>
